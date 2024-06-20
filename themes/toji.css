@@ -1,0 +1,53 @@
+body{
+    background-color: #373A3F;
+  }
+  #header{
+    color: #BABABA;
+  }
+  #newtask{
+    background-color: #7F5977;
+  }
+  #newtask input{
+    border: 2px solid #4a3446;
+    color: #ffffff;
+    background-color: #4a3446;
+  }
+  #newtask input:focus{
+    border-color: #BABABA;
+  }
+  #newtask button{
+    background-color: #4a3446;
+    color: #BABABA;
+  }
+  .custom-file-upload {
+    background-color: #4a3446;
+  }
+  .material-symbols-outlined {
+    color: #BABABA;
+  }
+  #tasksContainer{
+    background-color: #7F5977;
+  }
+  .task{
+    background-color: #7F5977;
+  }
+  .task span{
+    color:#e5e5e5 ;
+  }
+  .task button{
+    background-color: #4a3446;
+    color: #BABABA;
+  }
+  .completed{
+    text-decoration: line-through;
+    color: #bb0000;
+  }
+  #theme-area {
+    background: #7F5977;
+  }
+  #footer {
+    color:#BABABA;
+  }
+  #left-wing {
+    color: #BABABA;;
+  }

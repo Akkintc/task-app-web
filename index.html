@@ -1,30 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List With Local Storage</title>
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div id="new-task">
-        <input type="text" placeholder="Enter The Task Here..." />
-        <button id="push">Add</button>
-      </div>
-      <div id="tasks"></div>
+<head>
+    <title>Simple To Do List</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <link id="theme" rel="stylesheet" href="themes/light.css">
+</head>
+<body>
+    <div id="preloader">
+        <div id="quotes">"There will be obstacles. There will be doubters. There will be mistakes. But with hard work, there are no limits".</div>
     </div>
-    <!-- Script -->
+    <h2 id="header">Very Simple Task</h2>
+    <div id="container" class=>
+        <div id="newtask">
+            <input type="text" placeholder="Task to be done.." id="task-name">
+            <label for="file-upload" class="custom-file-upload">
+                <span class="material-symbols-outlined">upload_file</span>
+            </label>
+            <input id="file-upload" type="file" accept="image/jpeg, image/png, image/jpg, image/pdf">
+            <button id="push">Add</button>
+        </div>
+    
+        <div id="tasksContainer"></div>
+    </div>
+    <div id="footer">
+        <div id="show-themes" class="button" onclick="showThemeCenter();" tabindex="4">themes🎨</div>
+        /
+        <div id="show-calendar" class="button" onclick="showCalendar();" tabindex="5">calendar🗓️</div>
+        /
+        <div id="show-timer" class="button" onclick="showTimer();" tabindex="6">timer⏱️</div>
+        /
+        <div id="show-settings" class="button" onclick="showSettings();" tabindex="7">settings⚙️</div>
+    </div>
+    <div id="theme-center" class="hidden">
+        <div id="left-wing" onclick="hideThemeCenter();">&lt; back</div>
+        <div id="theme-area">
+        <div class="theme-button" onclick="setTheme('game')" id="game" tabindex="1" style="background: rgb(25, 27, 37); color: #36c1f6">game</div>
+        <div class="theme-button" onclick="setTheme('dark')" id="dark" tabindex="2" style="background: rgb(26, 26, 26); color: rgb(250, 250, 250);">dark</div>
+        <div class="theme-button" onclick="setTheme('light')" id="light" tabindex="3" style="background: rgb(250, 250, 250); color: rgb(26, 26, 26);">light</div>
+        <div class="theme-button" onclick="setTheme('mizu')" id="mizu" tabindex="4" style="background: rgb(37, 55, 70); color: rgb(250, 250, 250);">mizu</div>
+        <div class="theme-button" onclick="setTheme('lakers')" id="lakers" tabindex="5" style="background: rgb(33, 19, 51); color: rgb(238, 212, 132);">lakers</div>
+        <div class="theme-button" onclick="setTheme('sakura')" id="sakura" tabindex="6" style="background: linear-gradient(-20deg, rgb(255, 186, 200) 0%, rgb(255, 152, 172) 100%); color: rgb(239, 239, 239);">sakura</div>
+        <div class="theme-button" onclick="setTheme('dune')" id="dune" tabindex="7" style="background: rgb(227, 221, 204); color: rgb(26, 26, 26);">dune</div>
+        <div class="theme-button" onclick="setTheme('toji')" id="toji" tabindex="8" style="background: #4a3446; color: #BABABA;">toji</div>
+        </div>
+        </div>
+    <div id="calendar-center" class="hidden">
+        <div id="left-wing" onclick="hideCalendar();">&lt; back</div>
+        <div id="calendar-area">
+        <iframe src="https://calendar.google.com/calendar/embed?src=7nu3orugs96g2ok6i6kmvub6k8%40group.calendar.google.com&ctz=Asia%2FManila" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        </div>
+    <div id="timer-center" class="hidden">
+        <div id="left-wing" onclick="hideTimer();">&lt; back</div>
+        <div id="timer-area">
+            <input type="number" name="timer" id="timer-input">
+            <div class="timer-button"></div>
+        </div>
+        </div>
+    <div id="settings-center" class="hidden">
+        <div id="left-wing" onclick="hideSettings();">&lt; back</div>
+        <div id="settings-area"> 
+        by Goal Diggers
+        </div>
+        </div>
     <script src="script.js"></script>
-  </body>
+    <script src="theme.js"></script>
+</body>
 </html>

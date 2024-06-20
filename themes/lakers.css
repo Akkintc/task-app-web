@@ -1,0 +1,53 @@
+body{
+    background-color: #211333;
+  }
+  #header{
+    color: #eed484;
+  }
+  #newtask{
+    background-color: #2e1a47;
+  }
+  #newtask input{
+    border: 2px solid #211333;
+    color: #eed484;
+    background-color: #211333;
+  }
+  #newtask input:focus{
+    border-color: #eed484;
+  }
+  #newtask button{
+    background-color: #211333;
+    color: #eed484;
+  }
+  .custom-file-upload {
+    background-color: #211333;
+  }
+  .material-symbols-outlined {
+    color: #eed484;
+  }
+  #tasksContainer{
+    background-color: #2e1a47;
+  }
+  .task{
+    background-color: #2e1a47;
+  }
+  .task span{
+    color:#eed484 ;
+  }
+  .task button{
+    background-color: #211333;
+    color: #eed484;
+  }
+  .completed{
+    text-decoration: line-through;
+    color: #bb0000;
+  }
+  #theme-area {
+    background: #2e1a47;
+  }
+  #footer {
+    color:#eed484;
+  }
+  #left-wing {
+    color: #eed484;;
+  }

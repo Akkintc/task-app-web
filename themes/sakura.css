@@ -1,0 +1,53 @@
+body{
+    background: linear-gradient(-20deg, rgba(255, 186, 200, 1) 0%, rgba(255, 152, 172, 1) 100%);
+  }
+  #header{
+    color: #ffffff;
+  }
+  #newtask{
+    background-color: #ffffff;
+  }
+  #newtask input{
+    border: 2px solid #ffffff;
+    color: #ff98ac;
+    background-color: #efefef;
+  }
+  #newtask input:focus{
+    border-color: #ffffff;
+  }
+  #newtask button{
+    background-color: #ff98ac;
+    color: #ffffff;
+  }
+  .custom-file-upload {
+    background-color: #ff98ac;
+  }
+  .material-symbols-outlined {
+    color: #ffffff;
+  }
+  #tasksContainer{
+    background-color: #ffffff;
+  }
+  .task{
+    background-color: #ffffff;
+  }
+  .task span{
+    color:#ff98ac ;
+  }
+  .task button{
+    background-color: #ff98ac;
+    color: #ffffff;
+  }
+  .completed{
+    text-decoration: line-through;
+    color: #bb0000;
+  }
+  #theme-area {
+    background: #ffffff;
+  }
+  #footer {
+    color:#ffffff;
+  }
+  #left-wing {
+    color: #ffffff;;
+  }

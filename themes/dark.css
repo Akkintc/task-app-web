@@ -1,0 +1,53 @@
+body{
+  background-color: #1a1a1a;
+}
+#header{
+  color: #eaeaea;
+}
+#newtask{
+  background-color: #333333;
+}
+#newtask input{
+  border: 2px solid #1a1a1a;
+  color: #ffffff;
+  background-color: #1a1a1a;
+}
+#newtask input:focus{
+  border-color: #eaeaea;
+}
+#newtask button{
+  background-color: #1a1a1a;
+  color: #eaeaea;
+}
+.custom-file-upload {
+  background-color: #1a1a1a;
+}
+.material-symbols-outlined {
+    color: #eaeaea;
+}
+#tasksContainer{
+  background-color: #333333;
+}
+.task{
+  background-color: #333333;
+}
+.task span{
+  color:#eaeaea ;
+}
+.task button{
+  background-color: #1a1a1a;
+  color: #eaeaea;
+}
+.completed{
+  text-decoration: line-through;
+  color: #eaeaea;
+}
+#theme-area {
+  background: #333333;
+}
+#footer {
+  color:#eaeaea;
+}
+#left-wing {
+  color: #eaeaea;;
+}
