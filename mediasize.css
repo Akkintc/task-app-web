@@ -1,0 +1,8 @@
+@media (max-width: 455px) { 
+    #footer{
+    display: flex;
+    padding-top: 5px;
+    align-items: center;
+    flex-direction: column;
+    }
+}
