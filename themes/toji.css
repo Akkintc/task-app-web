@@ -25,9 +25,6 @@ body{
   .material-symbols-outlined {
     color: #BABABA;
   }
-  #tasksContainer{
-    background-color: #7F5977;
-  }
   .task{
     background-color: #7F5977;
   }

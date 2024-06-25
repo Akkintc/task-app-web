@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Simple To Do List</title>
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="style.css">
-    <link id="theme" rel="stylesheet" href="themes/light.css">
-    <link rel="stylesheet" href="mediasize.css">
 </head>
 <body>
+    <div id="preloader">
+        <div id="quotes">"There will be obstacles. There will be doubters. There will be mistakes. But with hard work, there are no limits".</div>
+    </div>
     <h2 id="header">Very Simple Task</h2>
-    <!-- New task and task contain -->
     <div id="container" class=>
         <div id="newtask">
             <input type="text" placeholder="Task to be done.." id="task-name">
             <label for="file-upload" class="custom-file-upload">
-                <span class="material-symbols-outlined">add_photo_alternate</span>
+                <span class="material-symbols-outlined">upload_file</span>
             </label>
             <input id="file-upload" type="file" accept="image/jpeg, image/png, image/jpg, image/pdf">
             <button id="push">Add</button>
@@ -27,7 +19,6 @@
     
         <div id="tasksContainer"></div>
     </div>
-    <!-- Themes/Calendar/Stopwatch/Settings -->
     <div id="footer">
         <div id="show-themes" class="button" onclick="showThemeCenter();" tabindex="4">themes🎨</div>
         /
@@ -37,7 +28,6 @@
         /
         <div id="show-settings" class="button" onclick="showSettings();" tabindex="7">settings⚙️</div>
     </div>
-    <!-- Theme -->
     <div id="theme-center" class="hidden">
         <div id="left-wing" onclick="hideThemeCenter();">&lt; back</div>
         <div id="theme-area">
@@ -51,22 +41,19 @@
         <div class="theme-button" onclick="setTheme('toji')" id="toji" tabindex="8" style="background: #4a3446; color: #BABABA;">toji</div>
         </div>
         </div>
-    <!-- Calendar -->
     <div id="calendar-center" class="hidden">
         <div id="left-wing" onclick="hideCalendar();">&lt; back</div>
         <div id="calendar-area">
-            <iframe src="https://embed.styledcalendar.com/#Bp6aunfxaeMUsVW5ovdW" title="Styled Calendar" class="styled-calendar-container" style="width: 100%; border: none;" data-cy="calendar-embed-iframe"></iframe>
-            <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
+        <iframe src="https://calendar.google.com/calendar/embed?src=7nu3orugs96g2ok6i6kmvub6k8%40group.calendar.google.com&ctz=Asia%2FManila" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
         </div>
-    <!-- Timer -->
     <div id="timer-center" class="hidden">
         <div id="left-wing" onclick="hideTimer();">&lt; back</div>
         <div id="timer-area">
-
+            <input type="number" name="timer" id="timer-input">
+            <div class="timer-button"></div>
         </div>
         </div>
-    <!-- Settings -->
     <div id="settings-center" class="hidden">
         <div id="left-wing" onclick="hideSettings();">&lt; back</div>
         <div id="settings-area"> 

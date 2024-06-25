@@ -2,6 +2,7 @@ const taskInput = document.querySelector("#newtask input");
 taskInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     // Simulate a click on the push button
+    // Entering also pushes the button
     document.querySelector('#push').click();
   }
 });
@@ -10,49 +11,55 @@ document.querySelector('#push').onclick = function() {
   const taskName = document.querySelector('#task-name').value.trim();
   const fileUpload = document.querySelector('#file-upload');
 
+  // If no image is uploaded
+  // taskName.length === 0 checks if task input is empty
+  // !fileUpload.files.length checks if file upload imput is empty
   if (taskName.length === 0 && !fileUpload.files.length) {
     alert("Please Enter a Task or Upload an Image");
     return;
   }
 
-  const newTask = document.createElement('div');
-  newTask.classList.add('task');
+  // Image Task
+  const newTask = document.createElement('div'); // Creates a div element, it's an individual task
+  newTask.classList.add('task'); // for css
 
-  // Image (if uploaded)
-  if (fileUpload.files.length > 0) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const image = document.createElement('img');
+  if (fileUpload.files.length > 0) { // Checks the file input if there's any images
+    const reader = new FileReader(); // Reads the uploaded file
+
+    // The onload event occurs when an object has been loaded. in this case it's the image loaded
+    reader.onload = function(e) { // Executes onload event
+      const image = document.createElement('img'); // Creates element 
       image.classList.add('task-image'); // Optional for styling
-      image.src = e.target.result;
-      newTask.insertBefore(image, newTask.firstChild); // Insert image before first child
+      image.src = e.target.result; // Finds the source of the image, which contains the data url of the image
+      newTask.insertBefore(image, newTask.firstChild); // Creates image element
     };
-    reader.readAsDataURL(fileUpload.files[0]);
+    reader.readAsDataURL(fileUpload.files[0]); 
   }
 
   // Task Name
-  const taskNameSpan = document.createElement('span');
-  taskNameSpan.id = 'taskname';
-  taskNameSpan.textContent = taskName;
-  newTask.appendChild(taskNameSpan);
+  const taskNameSpan = document.createElement('span'); //Creates html element "span"
+  taskNameSpan.id = 'taskname'; //for css
+  taskNameSpan.textContent = taskName; //Task name input becomes the task name
+  newTask.appendChild(taskNameSpan); // child of the new task
 
   // Delete Button
-  const deleteButton = document.createElement('button');
-  deleteButton.classList.add('delete');
-  deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>';
-  newTask.appendChild(deleteButton);
+  const deleteButton = document.createElement('button'); //Creates html element "button"
+  deleteButton.classList.add('delete'); //for css
+  deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>'; //Trash Icon
+  newTask.appendChild(deleteButton); // child of the new task
 
   // Delete Button Functionality
   deleteButton.onclick = function() {
     this.parentNode.remove(); // Remove the entire task element
   };
 
-  // Toggle Completed Class on Click (optional)
+  // Toggle Completed Class on Click
   newTask.onclick = function() {
     this.classList.toggle('completed');
   };
 
   // Append task element with image (if uploaded) and task name
+  // Each task is a child inside tasks container
   tasksContainer.appendChild(newTask);
 
   // Clear Input Fields and File Selection
@@ -109,26 +116,3 @@ document.querySelector('#push').onclick = function() {
     document.getElementById('container').classList.remove('hidden');
     document.getElementById('footer').classList.remove('hidden');
   }
-
-  var loader = document.getElementById("preloader");
-
-  window.addEventListener("load", function(){
-    loader.style.display = "none";
-  })
-
-
-  let profilePic = document.getElementById("tasks")
-  let inputFile = document.getElementById("file-upload")
-
-  const timeleft = document.getElementById('timer-input').value;
-
-  var timerleft = 0;
-  var downloadTimer = setInterval(function(){
-    if(timeleft <= 0){
-      clearInterval(downloadTimer);
-      document.getElementById("countdown").innerHTML = "Finished";
-    } else {
-      document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-    }
-    timeleft -= 1;
-  }, 1000);

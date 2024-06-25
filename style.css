@@ -105,7 +105,7 @@ body{
 }
 #newtask button:hover{
 	transition: all 0.2s ease;
-	filter: brightness(105%)
+	filter: brightness(95%)
 }
 input[type="file"] {
 	display: none;
@@ -130,7 +130,6 @@ input[type="file"] {
 	height: 20px;
 }
 #tasksContainer{
-	background-color: #eaeaea;
 	margin-top: 60px;
 	border-radius: 30px;
 	width: 100%;
@@ -152,6 +151,8 @@ input[type="file"] {
 	font-family: 'Roboto Mono',sans-serif;
 	font-weight: 400;
 	transition: all 0.2s ease;
+	margin-bottom: 4px;
+	box-shadow: 0 30px 30px -10px #47474760;
 }
 .task:hover{
 	scale: 104%;
@@ -294,6 +295,9 @@ input[type="file"] {
 	padding: 1.4rem 1rem;
 	border-radius: 10px;
 	background: #eaeaea;
+}
+.fc-toolbar-chunk{
+	display: none !important;
 }
 .hidden {
 	display: none !important;

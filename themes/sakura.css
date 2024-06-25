@@ -25,11 +25,9 @@ body{
   .material-symbols-outlined {
     color: #ffffff;
   }
-  #tasksContainer{
-    background-color: #ffffff;
-  }
   .task{
     background-color: #ffffff;
+    box-shadow: 0 30px 30px -10px #ff98acd0
   }
   .task span{
     color:#ff98ac ;
