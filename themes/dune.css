@@ -39,6 +39,18 @@ body{
     text-decoration: line-through;
     color: #1a1a1a;
   }
+  #timer-area {
+    background-color: #fdf6e3;
+  }
+  #display {
+    color: #1a1a1a;
+  }
+  #plus, #minus {
+    background-color: #e3ddcc;
+  }
+  #pause, #stop, #play {
+    background-color: #e3ddcc;
+  }
   #theme-area {
     background: #fdf6e3;
   }

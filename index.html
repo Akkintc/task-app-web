@@ -34,8 +34,6 @@
         <div id="show-calendar" class="button" onclick="showCalendar();" tabindex="5">calendar🗓️</div>
         /
         <div id="show-timer" class="button" onclick="showTimer();" tabindex="6">stopwatch⏱️</div>
-        /
-        <div id="show-settings" class="button" onclick="showSettings();" tabindex="7">settings⚙️</div>
     </div>
     <!-- Theme -->
     <div id="theme-center" class="hidden">
@@ -63,14 +61,26 @@
     <div id="timer-center" class="hidden">
         <div id="left-wing" onclick="hideTimer();">&lt; back</div>
         <div id="timer-area">
-
-        </div>
-        </div>
-    <!-- Settings -->
-    <div id="settings-center" class="hidden">
-        <div id="left-wing" onclick="hideSettings();">&lt; back</div>
-        <div id="settings-area"> 
-        by Goal Diggers
+            <div id="timeradd">
+                <button id="plus">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                  </button>
+                <div id="display">00:00</div>
+                <button id="minus">
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                  </button>
+                </div>
+            <div class="buttons">
+              <button id="pause">
+                <span class="material-symbols-outlined">pause</span>
+              </button>
+              <button id="stop">
+                <span class="material-symbols-outlined">stop</span>
+              </button>
+              <button id="play">
+                <span class="material-symbols-outlined">play_arrow</span>
+              </button>
+            </div>
         </div>
         </div>
     <script src="script.js"></script>

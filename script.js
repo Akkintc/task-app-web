@@ -67,7 +67,86 @@ document.querySelector('#push').onclick = function() {
   document.querySelector("#newtask input").value = "";
 };
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const display = document.getElementById('display'); 
+const buttons = document.querySelectorAll('button'); 
+let timerId = null;
+let minutes = 0;
+let seconds = 0;
+let isPaused = false;
+
+function updateDisplay() { // Function that updates the display
+  const formattedMinutes = minutes.toString().padStart(2, '0'); // Insures 2 digits
+  const formattedSeconds = seconds.toString().padStart(2, '0'); // Insures 2 digits
+  display.textContent = `${formattedMinutes}:${formattedSeconds}`; // Shows the time
+}
+
+function decrementTime() { // Decreasing timer by one second
+  if (seconds === 0) {
+    if (minutes === 0) { // If minutes are 0 it clears minutes and becomes seconds
+      clearInterval(timerId);
+    } else {
+      minutes--;
+      seconds = 59;
+    }
+  } else {
+    seconds--;
+  }
+  updateDisplay(); // Updates the display
+}
+
+function startTimer() { // Starts the timer
+  if (timerId !== null) clearInterval(timerId); // Checks if timer is already running
+  timerId = setInterval(decrementTime, 1000); //  It updates everytime (1 second)
+  isPaused = false; // Not paused
+}
+
+function pauseTimer() { // Pause the timer
+  if (timerId !== null) clearInterval(timerId); // Checks if timer is already running
+  isPaused = true; // Paused, Stops the update of timer
+}
+
+function stopTimer() { // Stop the Timer
+  clearInterval(timerId); // Clears timer
+  minutes = 0; // minutes timer
+  seconds = 0; // seconds timer
+  isPaused = false;
+  updateDisplay(); // Updates
+}
+
+buttons.forEach(button => {
+  button.addEventListener('click', function() {
+    switch (this.id) { 
+      case 'plus': // Add 5 mins
+        minutes += 5;
+        break;
+      case 'minus': // If minus is greater than 0, minus is by 5
+        if (minutes > 0) minutes -= 5;
+        break;
+      case 'pause': // Execute pause timer
+        pauseTimer();
+        break;
+      case 'stop': // Execute stop timer
+        stopTimer();
+        break;
+      case 'play': // If it's paused, start the timer
+        if (!isPaused) {
+          startTimer();
+        } else {
+          // Resume timer if paused
+          timerId = setInterval(decrementTime, 1000);
+          isPaused = false;
+        }
+        break;
+    }
+    updateDisplay(); // Update display
+  });
+});
+
+updateDisplay(); // Update display
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
   function showThemeCenter() {
     document.getElementById('theme-center').classList.remove('hidden');
