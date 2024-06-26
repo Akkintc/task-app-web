@@ -1,3 +1,9 @@
+var loader = document.getElementById("preloader");
+
+window.addEventListener("load", function(){
+  loader.style.display = "none";
+})
+
 const taskInput = document.querySelector("#newtask input");
 taskInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
